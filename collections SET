@@ -1,0 +1,36 @@
+package Set;
+
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+public class HashSetClass {
+	public static void main(String[]args) {
+		Set<String>Cars = new LinkedHashSet<String>();
+		Set<String>Bikes = new LinkedHashSet<String>();
+		
+//collection 1
+		Cars.add("AMAZE");
+		Cars.add("MAHINDRA XUV900");
+		Cars.add("HYUNDAI i20");  //duplicate item
+		Cars.add("HYUNDAI i20");
+		Cars.add("INNOVA CRYSTA");
+		
+//collection 2		
+		Bikes.add("X Pulse 200");
+		Bikes.add("Royal Enfield");
+		Bikes.add("Pulsar 150");
+		Bikes.add("Harley Davidson");
+		Bikes.add("Himalayan 550");
+		
+		//Merges the Cars with Bikes
+		Cars.addAll(Bikes);
+		
+//searching a set of items
+		boolean isExist = Cars.containsAll(Bikes);
+		if (isExist) {
+			System.out.println("X Pulse 200 is available");
+		}
+		else {System.out.println("X Pulse 200 is not available");
+}
+	}
+}
