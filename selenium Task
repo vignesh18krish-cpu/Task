@@ -1,0 +1,143 @@
+package seleniumTask;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.List;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+import java.util.ArrayList;
+
+import org.openqa.selenium.WebDriver;
+
+public class Website {
+	public static void main(String[] args) throws InterruptedException {
+		
+		//list stmt
+		List<String>sites = new ArrayList<String>();
+		
+		//link1
+		String siteURL1 = "https://www.google.com";
+		
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver1 = new ChromeDriver();
+		
+		driver1.navigate().to(siteURL1);
+		
+		driver1.manage().window().maximize();
+		
+		Thread.sleep(3000);
+		
+		String title1 = driver1.getTitle();
+        System.out.println("1st Website Title: "+ title1);
+        
+        String Url1 = driver1.getCurrentUrl();
+        System.out.println("1st Website URL: "+Url1);
+        
+        driver1.close();
+        
+        
+        //link2
+        String siteURL2 = "https://www.samsung.com/us/support/owners/app/samsung-internet/";
+		
+		
+		//WebDriverManager.chromedriver().setup();
+		WebDriver driver2 = new ChromeDriver();
+		
+		driver2.navigate().to(siteURL2);
+		
+		driver2.manage().window().maximize();
+		Thread.sleep(3000);
+		
+		String title2 = driver2.getTitle();
+        System.out.println("2nd Website Title: "+ title2);
+        
+        String Url2 = driver2.getCurrentUrl();
+        System.out.println("2nd Website URL: "+Url2);
+      
+        driver2.close();
+        
+        
+		//link3
+		String siteURL3 = "https://www.ucweb.com";
+		
+		//WebDriverManager.chromedriver().setup();
+		WebDriver driver3 = new ChromeDriver();
+		
+		driver3.navigate().to(siteURL3);
+		
+		driver3.manage().window().maximize();
+		Thread.sleep(3000);
+		
+		String title3 = driver3.getTitle();
+		System.out.println("3rd Website Title: "+title3);
+		
+		String Url3 = driver3.getCurrentUrl();
+		System.out.println("3rd Website URL: "+Url3);
+		
+		driver3.close();
+		
+		
+		//link4
+		String siteURL4 = "https://www.microsoft.com/en-us/edge";
+				
+	    //WebDriverManager.chromedriver().setup();
+		WebDriver driver4 = new ChromeDriver();
+				
+		driver4.navigate().to(siteURL4);
+		
+		driver4.manage().window().maximize();
+		Thread.sleep(3000);
+				
+		String title4 = driver4.getTitle();
+		System.out.println("4th Website Title: "+title4);
+				
+		String Url4 = driver4.getCurrentUrl();
+	    System.out.println("4th Website URL: "+Url4);
+				
+		driver4.close();
+		
+		//link5
+		String siteURL5 = "https://brave.com/";
+		
+	    //WebDriverManager.chromedriver().setup();
+		WebDriver driver5 = new ChromeDriver();
+				
+		driver5.navigate().to(siteURL5);
+		
+		driver5.manage().window().maximize();
+		Thread.sleep(3000);
+				
+		String title5 = driver5.getTitle();
+		System.out.println("5th Website Title: "+title5);
+				
+		String Url5 = driver5.getCurrentUrl();
+	    System.out.println("5th Website URL: "+Url5);
+				
+		driver5.close();
+       
+	
+	sites.add("siteURL1");
+	sites.add("siteURL2");
+	sites.add("siteURL3");
+	sites.add("siteURL4");
+	sites.add("siteURL5");
+	System.out.println("\nThe list of sites is : ");
+		
+	String websites = sites.get(0);
+	System.out.println("the first link is : "+ siteURL1);
+	
+	websites = sites.get(1);
+	System.out.println("the second link is : "+ siteURL2);
+	
+	websites = sites.get(2);
+	System.out.println("the third link is : "+ siteURL3);
+	
+	websites = sites.get(3);
+	System.out.println("the forth link is : "+ siteURL4);
+	
+	websites = sites.get(4);
+	System.out.println("the forth link is : "+ siteURL5);
+	}	
+
+}
