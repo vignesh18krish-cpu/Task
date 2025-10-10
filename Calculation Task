@@ -1,0 +1,48 @@
+package SeleniumConcept;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class SeleniumTask {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		WebDriverManager.chromedriver().setup();
+		WebDriver sum = new ChromeDriver();
+		
+		sum.get("https://testsheepnz.github.io/BasicCalculator.html");
+		
+		//for firstnumber
+		WebElement one = sum.findElement(By.id("number1Field"));
+		one.sendKeys("56789");
+		
+		//for secondnumber
+		WebElement two = sum.findElement(By.id("number2Field"));
+		two.sendKeys("36578");
+		
+		WebElement b1 = sum.findElement(By.id("calculateButton"));
+    b1.click();
+        
+    //WebElement link = sum.findElement(By.linkText(""));
+    WebElement link = sum.findElement(By.linkText("About"));
+    String show = link.getText();
+    System.out.println("The link name is: "+show);
+       
+    WebElement link1 = sum.findElement(By.partialLinkText("Terms"));
+    String show2 =link1.getText();
+    System.out.println("The link is: "+show2);
+		
+		
+		Thread.sleep(5000);
+		sum.close();		
+		
+		
+	
+	}
+
+}
