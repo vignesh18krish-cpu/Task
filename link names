@@ -1,0 +1,23 @@
+package SeleniumConcept;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class AcademyBugs {
+
+	public static void main(String[] args) {
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://academybugs.com/contact-us-form/");
+		List<WebElement>links = driver.findElements(By.xpath("//li"));
+		for(WebElement linkname:links) {
+			System.out.println(linkname.getText());
+		}
+		driver.close();
+	}
+
+}
