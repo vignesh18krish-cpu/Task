@@ -1,0 +1,42 @@
+package SeleniumConcept;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class AlertTask {
+	public static void main(String[]args) throws InterruptedException {
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.tutorialspoint.com/selenium/practice/alerts.php");
+		
+		//first alert
+		WebElement link1 = driver.findElement(By.cssSelector("button.btn-primary"));
+		link1.click();
+		Thread.sleep(2000);
+		Alert al1 = driver.switchTo().alert();
+		System.out.println(al1.getText());
+		al1.accept();
+		
+		//second alert
+		WebElement link2 = driver.findElement(By.xpath("//button[@onclick=\"myDesk()\"]"));
+		link2.click();
+		Thread.sleep(2000);
+		Alert al2 = driver.switchTo().alert();
+		System.out.println(al2.getText());
+		al2.dismiss();
+		
+		//third alert
+		WebElement link3 = driver.findElement(By.xpath("//button[@onclick=\"myPromp()\"]"));
+		link3.click();
+		Thread.sleep(2000);
+		Alert al3 = driver.switchTo().alert();
+		Thread.sleep(2000);
+		System.out.println(al3.getText());
+	    al3.sendKeys("vicky");
+	    Thread.sleep(2000);
+	    al3.accept();
+	}
+
+}
