@@ -1,0 +1,36 @@
+package SeleniumConcept;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class multiwindowTask {
+	public static void main(String[]args) {
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.hyrtutorials.com/p/window-handles-practice.html");
+		driver.manage().window().maximize();
+		WebElement b1 = driver.findElement(By.id("newWindowsBtn"));
+		b1.click();
+		String mainwindow = driver.getWindowHandle();
+		System.out.println("Paranet Window: "+mainwindow);
+        Set<String> allwindows = driver.getWindowHandles();
+        
+       List<String>all = new ArrayList<String>(allwindows);
+       
+       for(String firstwindow : all) {
+    	   if(!firstwindow.equals(mainwindow));
+    	   driver.switchTo().window(all.get(1));
+    	   driver.manage().window().maximize();
+           String url = driver.getCurrentUrl();
+           System.out.println(url);
+            
+       }
+         driver.quit();
+	}
+
+}
