@@ -1,0 +1,28 @@
+package SeleniumConcept;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class LoginProject {
+	public static void main(String[]args) {
+		String url = "https://practicetestautomation.com/practice-test-login/";
+		WebDriver browser = new ChromeDriver();
+		browser.get(url);
+		WebElement user = browser.findElement(By.id("username"));
+		user.sendKeys("student");
+		WebElement pass = browser.findElement(By.id("password"));
+		pass.sendKeys("Password123");
+		WebElement login = browser.findElement(By.id("submit"));
+		login.click();
+		WebElement link = browser.findElement(By.cssSelector("h1[class='post-title']"));
+		System.out.println(link.getText());
+		WebElement out =  browser.findElement(By.cssSelector("a[href='https://practicetestautomation.com/practice-test-login/']"));
+		out.click();
+		
+		browser.quit();
+	
+	}
+
+}
